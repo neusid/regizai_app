@@ -14,6 +14,13 @@ class DateFormatter {
     return '$dayName, ${date.day} $monthName ${date.year}';
   }
 
+  static String formatShortDayMonth(DateTime date) {
+    const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+    final dayName = _days[date.weekday - 1];
+    final monthName = shortMonths[date.month - 1];
+    return '$dayName, ${date.day} $monthName';
+  }
+
   static String formatShort(DateTime date) {
     return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}';
   }

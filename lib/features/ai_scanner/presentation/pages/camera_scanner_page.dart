@@ -24,7 +24,7 @@ class CameraScannerPage extends StatelessWidget {
               context,
               AppRoutes.scanPreview,
               arguments: {
-                'imagePath': 'assets/images/sample_food.jpg',
+                'imagePath': 'assets/img/nasi goreng.png',
                 'foodName': state.result.foodName,
                 'calories': double.tryParse(state.result.calories.replaceAll(RegExp(r'[^0-9.]'), '')) ?? 420.0,
                 'protein': double.tryParse(state.result.protein.replaceAll(RegExp(r'[^0-9.]'), '')) ?? 18.5,

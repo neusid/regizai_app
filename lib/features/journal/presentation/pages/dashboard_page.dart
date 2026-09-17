@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:regizai/app/config/routes/app_routes.dart';
 import 'package:regizai/core/theme/app_theme.dart';
 import 'package:regizai/core/utils/date_formatter.dart';
+import 'package:regizai/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:regizai/features/auth/presentation/bloc/auth_state.dart';
 import 'package:regizai/features/journal/presentation/bloc/journal_bloc.dart';
 import 'package:regizai/features/journal/presentation/widgets/calorie_summary_card.dart';
 import 'package:regizai/features/journal/presentation/widgets/floating_nav_bar.dart';
@@ -10,6 +12,19 @@ import 'package:regizai/features/journal/presentation/widgets/macro_bar_widget.d
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
+
+  String _getTimeGreeting() {
+    final hour = DateTime.now().hour;
+    if (hour >= 4 && hour < 11) {
+      return 'Selamat Pagi 🌅';
+    } else if (hour >= 11 && hour < 15) {
+      return 'Selamat Siang ☀️';
+    } else if (hour >= 15 && hour < 18) {
+      return 'Selamat Sore 🌇';
+    } else {
+      return 'Selamat Malam 🌙';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,43 +79,104 @@ class DashboardPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Top Date & Greeting
+                // Top Date Pill & Health Status Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          DateFormatter.formatIndonesian(DateTime.now()),
-                          style: const TextStyle(fontSize: 13, color: AppTheme.textSub, fontWeight: FontWeight.w500),
-                        ),
-                        const SizedBox(height: 2),
-                        const Text(
-                          'Halo, Sahabat Sehat! 👋',
-                          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: AppTheme.textMain, letterSpacing: -0.5),
-                        ),
-                      ],
-                    ),
+                    // Modern Date Pill
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: AppTheme.borderSubtle, width: 1),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0x06000000),
+                            blurRadius: 8,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.calendar_today_rounded, size: 13, color: AppTheme.primaryGreen),
+                          const SizedBox(width: 6),
+                          Text(
+                            DateFormatter.formatShortDayMonth(DateTime.now()),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              color: AppTheme.textMain,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Modern Healthy Energy Badge
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       decoration: BoxDecoration(
                         color: AppTheme.primaryExtraLight,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: AppTheme.primaryLight),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(color: const Color(0xFFA7F3D0), width: 1),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: const [
-                          Icon(Icons.bolt_rounded, color: AppTheme.primaryGreen, size: 16),
+                          Icon(Icons.bolt_rounded, color: AppTheme.primaryGreen, size: 15),
                           SizedBox(width: 4),
-                          Text('Fit Hari Ini', style: TextStyle(color: AppTheme.primaryDark, fontSize: 11, fontWeight: FontWeight.w700)),
+                          Text(
+                            'Semangat Sehat',
+                            style: TextStyle(
+                              color: AppTheme.primaryDark,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 18),
+
+                const SizedBox(height: 12),
+
+                // Hero Greeting & Personalized User Name
+                BlocBuilder<AuthBloc, AuthState>(
+                  builder: (context, authState) {
+                    final user = (authState is AuthenticatedState) ? authState.user : null;
+                    final userName = (user?.name.isNotEmpty == true) ? user!.name : 'Malik Ibrahim';
+
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          _getTimeGreeting(),
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: AppTheme.primaryGreen,
+                            letterSpacing: 0.2,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          userName,
+                          style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w900,
+                            color: AppTheme.textMain,
+                            letterSpacing: -0.6,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+                const SizedBox(height: 16),
                 // Hero Calorie Card
                 CalorieSummaryCard(consumed: totalCalories, target: 2150.0),
                 const SizedBox(height: 22),

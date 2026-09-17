@@ -1,0 +1,382 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 540" width="100%" height="100%">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;display=swap');
+      text {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+    </style>
+
+    <!-- Drop Shadows -->
+    <filter id="phoneShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0F172A" flood-opacity="0.18" />
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.08" />
+    </filter>
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#10B981" flood-opacity="0.25" />
+    </filter>
+    <filter id="glowCircle" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="60" result="blur" />
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#FAFCFB" />
+      <stop offset="85%" stop-color="#F0FDF4" />
+      <stop offset="100%" stop-color="#E6F9EE" />
+    </linearGradient>
+
+    <linearGradient id="emeraldHero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065F46" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <linearGradient id="phoneBorder1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <linearGradient id="screenBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+
+    <linearGradient id="foodImageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="60%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+
+    <linearGradient id="calorieArc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Canvas Background -->
+  <rect width="1440" height="540" fill="url(#bgGradient)" rx="24" />
+
+  <!-- 2. Decorative Background Radial Accents (Right Side) -->
+  <g opacity="0.85">
+    <circle cx="1140" cy="270" r="260" fill="#A7F3D0" opacity="0.22" filter="url(#glowCircle)" />
+    <circle cx="1140" cy="270" r="230" fill="none" stroke="#D1FAE5" stroke-width="1.5" stroke-dasharray="8 8" />
+    <circle cx="1140" cy="270" r="170" fill="none" stroke="#A7F3D0" stroke-width="1.2" />
+    <circle cx="1140" cy="270" r="110" fill="none" stroke="#6EE7B7" stroke-width="1" stroke-dasharray="5 5" opacity="0.6" />
+  </g>
+
+  <!-- Subtle grid lines left side -->
+  <g opacity="0.35">
+    <line x1="80" y1="90" x2="680" y2="90" stroke="#E2E8F0" stroke-width="0.75" stroke-dasharray="4 4" />
+    <line x1="80" y1="460" x2="680" y2="460" stroke="#E2E8F0" stroke-width="0.75" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- 3. LEFT CONTENT (TEXT & INFO) -->
+  <!-- ================================================================= -->
+  <g transform="translate(90, 85)">
+    <!-- Decorative 3 Dots (Matching Figma style) -->
+    <circle cx="600" cy="12" r="4" fill="#10B981" />
+    <circle cx="616" cy="12" r="4" fill="#34D399" />
+    <circle cx="632" cy="12" r="4" fill="#A7F3D0" />
+
+    <!-- Badges Row -->
+    <g transform="translate(0, 0)">
+      <!-- Badge 1: Category -->
+      <rect x="0" y="0" width="186" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.2" />
+      <circle cx="18" cy="17" r="4.5" fill="#10B981" />
+      <text x="32" y="22" font-size="11" font-weight="800" fill="#065F46" letter-spacing="1">MOBILE DEVELOPMENT</text>
+
+      <!-- Badge 2: Tech Domain -->
+      <rect x="198" y="0" width="168" height="34" rx="17" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.2" />
+      <text x="216" y="21" font-size="12">🥗</text>
+      <text x="238" y="22" font-size="11" font-weight="800" fill="#047857" letter-spacing="0.8">HEALTH-TECH &amp; AI</text>
+    </g>
+
+    <!-- Main Title: RegizAI . -->
+    <g transform="translate(0, 82)">
+      <text x="0" y="0" font-size="64" font-weight="900" fill="#0F172A" letter-spacing="-1.5">
+        RegizAI<tspan fill="#10B981"> .</tspan>
+      </text>
+    </g>
+
+    <!-- Subtitle / Tagline -->
+    <g transform="translate(2, 122)">
+      <text x="0" y="0" font-size="17" font-weight="500" fill="#64748B" letter-spacing="-0.2">
+        Smart AI food nutrition scanner &amp; balanced diet recommendation platform
+      </text>
+    </g>
+
+    <!-- Tech Stack Pills Row (Figma Style) -->
+    <g transform="translate(0, 160)">
+      <!-- Pill 1: Flutter -->
+      <g transform="translate(0, 0)">
+        <rect width="96" height="32" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#cardShadow)" />
+        <circle cx="16" cy="16" r="3.5" fill="#10B981" />
+        <text x="28" y="20" font-size="12" font-weight="700" fill="#1E293B">Flutter</text>
+      </g>
+      <!-- Pill 2: Dart -->
+      <g transform="translate(106, 0)">
+        <rect width="84" height="32" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#cardShadow)" />
+        <circle cx="16" cy="16" r="3.5" fill="#10B981" />
+        <text x="28" y="20" font-size="12" font-weight="700" fill="#1E293B">Dart</text>
+      </g>
+      <!-- Pill 3: Vision AI -->
+      <g transform="translate(200, 0)">
+        <rect width="134" height="32" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#cardShadow)" />
+        <circle cx="16" cy="16" r="3.5" fill="#10B981" />
+        <text x="28" y="20" font-size="12" font-weight="700" fill="#1E293B">Vision AI TFLite</text>
+      </g>
+      <!-- Pill 4: Bloc State -->
+      <g transform="translate(344, 0)">
+        <rect width="112" height="32" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#cardShadow)" />
+        <circle cx="16" cy="16" r="3.5" fill="#10B981" />
+        <text x="28" y="20" font-size="12" font-weight="700" fill="#1E293B">Bloc State</text>
+      </g>
+      <!-- Pill 5: FatSecret API -->
+      <g transform="translate(466, 0)">
+        <rect width="132" height="32" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" filter="url(#cardShadow)" />
+        <circle cx="16" cy="16" r="3.5" fill="#10B981" />
+        <text x="28" y="20" font-size="12" font-weight="700" fill="#1E293B">FatSecret API</text>
+      </g>
+    </g>
+
+    <!-- Footer Links / Contact Pills (Matching Figma bottom pill bar) -->
+    <g transform="translate(0, 245)">
+      <!-- Link Pill 1: Web -->
+      <g transform="translate(0, 0)">
+        <rect width="248" height="38" rx="19" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)" />
+        <!-- Globe Icon -->
+        <g transform="translate(14, 11)">
+          <circle cx="8" cy="8" r="7.5" fill="#0F172A" />
+          <path d="M8 0.5C3.86 0.5 0.5 3.86 0.5 8s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5S12.14 0.5 8 0.5zM2 8a6 6 0 0 1 1-3.32M8 2a6 6 0 0 1 4 6" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        </g>
+        <text x="38" y="24" font-size="12.5" font-weight="600" fill="#334155">https://neusid-next.vercel.app/</text>
+      </g>
+
+      <!-- Link Pill 2: Phone -->
+      <g transform="translate(262, 0)">
+        <rect width="194" height="38" rx="19" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)" />
+        <!-- Phone Icon -->
+        <g transform="translate(14, 11)">
+          <circle cx="8" cy="8" r="7.5" fill="#0F172A" />
+          <path d="M5.5 5.5c.3-.6.8-.7 1.2-.5l1.2.6c.4.2.5.6.3.9l-.4.6c.5.9 1.3 1.7 2.2 2.2l.6-.4c.3-.2.7-.1.9.3l.6 1.2c.2.4.1.9-.5 1.2-.8.4-2.2-.1-3.6-1.5-1.4-1.4-1.9-2.8-1.5-3.6z" fill="#FFFFFF"/>
+        </g>
+        <text x="38" y="24" font-size="12.5" font-weight="600" fill="#334155">+628-131-230-0994</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- 4. RIGHT CONTENT (TWO SMARTPHONE DEVICE MOCKUPS) -->
+  <!-- ================================================================= -->
+
+  <!-- PHONE 1 (BACK / LEFT): RegizAI Dashboard Page -->
+  <g transform="translate(860, 40) rotate(-6.5)" filter="url(#phoneShadow)">
+    <!-- Outer Phone Chassis -->
+    <rect width="224" height="456" rx="42" fill="url(#phoneBorder1)" stroke="#64748B" stroke-width="2" />
+    <!-- Inner Screen Bezel -->
+    <rect x="7" y="7" width="210" height="442" rx="36" fill="#0F172A" />
+    <!-- Screen Viewport -->
+    <rect x="9" y="9" width="206" height="438" rx="34" fill="url(#screenBg)" />
+
+    <!-- Dynamic Island / Top Camera -->
+    <rect x="77" y="16" width="70" height="18" rx="9" fill="#000000" />
+    <circle cx="132" cy="25" r="3.5" fill="#1E293B" />
+
+    <!-- Screen UI: Dashboard Header -->
+    <g transform="translate(20, 48)">
+      <!-- App Bar -->
+      <rect x="0" y="0" width="24" height="24" rx="7" fill="#D1FAE5" />
+      <text x="6" y="17" font-size="13">🌿</text>
+      <text x="32" y="17" font-size="14" font-weight="900" fill="#0F172A" letter-spacing="-0.3">RegizAI</text>
+      <circle cx="166" cy="12" r="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
+      <circle cx="166" cy="10" r="4" fill="#64748B" />
+      <path d="M158 19c0-2.5 3.5-4 8-4s8 1.5 8 4" fill="#64748B" />
+
+      <!-- Date Pill & Health Status -->
+      <g transform="translate(0, 36)">
+        <rect width="90" height="20" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" />
+        <text x="8" y="14" font-size="8.5" font-weight="700" fill="#10B981">📅</text>
+        <text x="24" y="14" font-size="8" font-weight="700" fill="#1E293B">Selasa, 15 Sep</text>
+
+        <rect x="96" y="0" width="72" height="20" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="0.8" />
+        <text x="102" y="14" font-size="8.5" font-weight="800" fill="#059669">⚡ Fit Aktif</text>
+      </g>
+
+      <!-- Greeting & User -->
+      <g transform="translate(0, 68)">
+        <text x="0" y="0" font-size="10" font-weight="600" fill="#10B981">Selamat Siang ☀️</text>
+        <text x="0" y="15" font-size="15" font-weight="900" fill="#0F172A" letter-spacing="-0.3">Malik Ibrahim</text>
+      </g>
+
+      <!-- Calorie Hero Card -->
+      <g transform="translate(0, 96)">
+        <rect width="168" height="110" rx="16" fill="url(#emeraldHero)" />
+        <text x="14" y="24" font-size="10" font-weight="700" fill="#A7F3D0" letter-spacing="0.5">TARGET HARIAN</text>
+        <text x="14" y="48" font-size="22" font-weight="900" fill="#FFFFFF">780<tspan font-size="11" font-weight="500"> / 2.150</tspan></text>
+        <text x="14" y="64" font-size="9" font-weight="600" fill="#D1FAE5">kkal dikonsumsi hari ini</text>
+
+        <!-- Mini Progress Bar -->
+        <rect x="14" y="80" width="140" height="8" rx="4" fill="#064E3B" opacity="0.6" />
+        <rect x="14" y="80" width="58" height="8" rx="4" fill="#34D399" />
+      </g>
+
+      <!-- Quick Action Bento Grid Mini -->
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" font-size="11" font-weight="800" fill="#0F172A">Akses Cepat</text>
+
+        <g transform="translate(0, 10)">
+          <!-- Action 1: Scan AI -->
+          <rect width="78" height="66" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" />
+          <circle cx="20" cy="22" r="11" fill="#ECFDF5" />
+          <text x="14" y="27" font-size="11">📸</text>
+          <text x="10" y="47" font-size="9" font-weight="800" fill="#0F172A">AI Scan</text>
+          <text x="10" y="58" font-size="7" font-weight="500" fill="#64748B">Gizi Realtime</text>
+
+          <!-- Action 2: BMI -->
+          <rect x="88" y="0" width="78" height="66" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" />
+          <circle cx="108" cy="22" r="11" fill="#EFF6FF" />
+          <text x="102" y="27" font-size="11">⚖️</text>
+          <text x="98" y="47" font-size="9" font-weight="800" fill="#0F172A">BMI Calc</text>
+          <text x="98" y="58" font-size="7" font-weight="500" fill="#64748B">Ideal Score</text>
+        </g>
+      </g>
+
+      <!-- Bottom Tab Indicator -->
+      <rect x="54" y="372" width="60" height="4" rx="2" fill="#94A3B8" />
+    </g>
+  </g>
+
+
+  <!-- PHONE 2 (FRONT / RIGHT): RegizAI Scan Preview Result -->
+  <g transform="translate(1080, 50) rotate(3.5)" filter="url(#phoneShadow)">
+    <!-- Outer Phone Chassis -->
+    <rect width="228" height="462" rx="42" fill="url(#phoneBorder1)" stroke="#64748B" stroke-width="2" />
+    <!-- Inner Screen Bezel -->
+    <rect x="7" y="7" width="214" height="448" rx="36" fill="#0F172A" />
+    <!-- Screen Viewport -->
+    <rect x="9" y="9" width="210" height="444" rx="34" fill="#F8FAFC" />
+
+    <!-- Dynamic Island / Top Camera -->
+    <rect x="79" y="16" width="70" height="18" rx="9" fill="#000000" />
+    <circle cx="134" cy="25" r="3.5" fill="#1E293B" />
+
+    <!-- Screen UI: Scan Result -->
+    <!-- Top Image Banner in Phone -->
+    <g transform="translate(9, 9)">
+      <clipPath id="phoneImageClip">
+        <rect width="210" height="145" rx="34" />
+      </clipPath>
+      <rect width="210" height="145" fill="url(#foodImageGrad)" clip-path="url(#phoneImageClip)" />
+
+      <!-- Food Graphic Art Representation -->
+      <circle cx="105" cy="80" r="44" fill="#F59E0B" opacity="0.15" />
+      <text x="82" y="96" font-size="46">🍛</text>
+
+      <!-- Floating Glass Back Button -->
+      <circle cx="28" cy="42" r="12" fill="#000000" opacity="0.4" />
+      <path d="M30 38l-4 4 4 4" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Floating 98.4% AI Match Badge on Screen -->
+      <g transform="translate(110, 32)">
+        <rect width="86" height="22" rx="11" fill="#065F46" opacity="0.9" stroke="#34D399" stroke-width="1" />
+        <circle cx="12" cy="11" r="5" fill="#10B981" />
+        <path d="M10 11l1.5 1.5 3-3" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <text x="22" y="15" font-size="8.5" font-weight="800" fill="#FFFFFF">98.4% Match</text>
+      </g>
+
+      <!-- Gradient Fade Bottom of Image -->
+      <rect y="115" width="210" height="30" fill="url(#foodImageGrad)" opacity="0.7" />
+    </g>
+
+    <!-- Scan Content Details -->
+    <g transform="translate(24, 164)">
+      <!-- Food Title & Tag -->
+      <rect width="78" height="16" rx="5" fill="#D1FAE5" />
+      <text x="6" y="12" font-size="7.5" font-weight="800" fill="#065F46" letter-spacing="0.4">HIDANGAN UTAMA</text>
+
+      <text x="0" y="32" font-size="14" font-weight="900" fill="#0F172A" letter-spacing="-0.2">Nasi Goreng Sehat</text>
+
+      <!-- Nutrition Donut Chart Mini Box -->
+      <g transform="translate(0, 42)">
+        <rect width="180" height="116" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="0.8" />
+        <text x="12" y="16" font-size="9" font-weight="800" fill="#0F172A">Komposisi Makro</text>
+        <text x="134" y="16" font-size="8" font-weight="700" fill="#64748B">1.0 Porsi</text>
+
+        <!-- Donut Chart Art -->
+        <g transform="translate(90, 66)">
+          <!-- Base Track -->
+          <circle cx="0" cy="0" r="28" fill="none" stroke="#F1F5F9" stroke-width="7" />
+          <!-- Protein Segment (Green) -->
+          <circle cx="0" cy="0" r="28" fill="none" stroke="#10B981" stroke-width="7" stroke-dasharray="45 140" stroke-linecap="round" />
+          <!-- Carb Segment (Blue) -->
+          <circle cx="0" cy="0" r="28" fill="none" stroke="#3B82F6" stroke-width="7" stroke-dasharray="75 140" stroke-dashoffset="-52" stroke-linecap="round" />
+          <!-- Fat Segment (Coral) -->
+          <circle cx="0" cy="0" r="28" fill="none" stroke="#F43F5E" stroke-width="7" stroke-dasharray="32 140" stroke-dashoffset="-132" stroke-linecap="round" />
+
+          <!-- Center Calorie Text -->
+          <text x="0" y="-2" text-anchor="middle" font-size="12" font-weight="900" fill="#0F172A">420</text>
+          <text x="0" y="8" text-anchor="middle" font-size="7" font-weight="600" fill="#64748B">kkal</text>
+        </g>
+      </g>
+
+      <!-- 3 Macro Bento Cards Row -->
+      <g transform="translate(0, 166)">
+        <!-- Protein -->
+        <rect width="56" height="42" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="0.7" />
+        <text x="28" y="17" text-anchor="middle" font-size="10" font-weight="900" fill="#059669">18.5g</text>
+        <text x="28" y="29" text-anchor="middle" font-size="7.5" font-weight="700" fill="#065F46">Protein</text>
+        <text x="28" y="37" text-anchor="middle" font-size="6" font-weight="500" fill="#047857">4 kkal/g</text>
+
+        <!-- Karbo -->
+        <g transform="translate(62, 0)">
+          <rect width="56" height="42" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="0.7" />
+          <text x="28" y="17" text-anchor="middle" font-size="10" font-weight="900" fill="#2563EB">55.0g</text>
+          <text x="28" y="29" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1D4ED8">Karbo</text>
+          <text x="28" y="37" text-anchor="middle" font-size="6" font-weight="500" fill="#1E40AF">4 kkal/g</text>
+        </g>
+
+        <!-- Lemak -->
+        <g transform="translate(124, 0)">
+          <rect width="56" height="42" rx="10" fill="#FFF1F2" stroke="#FECDD3" stroke-width="0.7" />
+          <text x="28" y="17" text-anchor="middle" font-size="10" font-weight="900" fill="#E11D48">12.0g</text>
+          <text x="28" y="29" text-anchor="middle" font-size="7.5" font-weight="700" fill="#BE123C">Lemak</text>
+          <text x="28" y="37" text-anchor="middle" font-size="6" font-weight="500" fill="#9F1239">9 kkal/g</text>
+        </g>
+      </g>
+
+      <!-- Save Button CTA -->
+      <g transform="translate(0, 218)">
+        <rect width="180" height="32" rx="11" fill="url(#emeraldHero)" />
+        <text x="90" y="20" text-anchor="middle" font-size="9.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.2">
+          💾 Simpan ke Jurnal
+        </text>
+      </g>
+
+      <!-- Bottom Home Line -->
+      <rect x="54" y="260" width="70" height="3.5" rx="2" fill="#94A3B8" />
+    </g>
+  </g>
+
+  <!-- ================================================================= -->
+  <!-- 5. FLOATING AI BADGE (Matching Figma Top Right Card) -->
+  <!-- ================================================================= -->
+  <g transform="translate(1200, 36)" filter="url(#badgeShadow)">
+    <rect width="188" height="58" rx="16" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1.2" />
+    <!-- Icon Circle -->
+    <rect x="14" y="12" width="34" height="34" rx="10" fill="#ECFDF5" />
+    <text x="22" y="35" font-size="18">🥗</text>
+    <!-- Text -->
+    <text x="56" y="26" font-size="12" font-weight="800" fill="#0F172A">AI Nutrition Vision</text>
+    <g transform="translate(56, 32)">
+      <circle cx="4" cy="7" r="3.5" fill="#10B981" />
+      <text x="12" y="10" font-size="10.5" font-weight="700" fill="#059669">98.4% Accuracy</text>
+    </g>
+  </g>
+</svg>
