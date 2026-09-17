@@ -1,7 +1,7 @@
 # 🥗 RegizAI (Smart AI Nutrition & Calorie Assistant)
 
 <p align="center">
-  <img src="assets/img/logo.png" alt="RegizAI Logo" width="160" />
+  <img src="regizai_banner.svg" alt="RegizAI Banner" width="100%" />
 </p>
 
 <p align="center">
@@ -17,10 +17,6 @@
   <img src="https://img.shields.io/badge/Offline%20First-FFA000?style=for-the-badge&logoColor=white" alt="Offline First" />
   <img src="https://img.shields.io/badge/Standar%20Kemenkes%20RI-E91E63?style=for-the-badge&logoColor=white" alt="Kemenkes RI" />
   <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Platform" />
-</p>
-
-<p align="center">
-  <img src="regizai_banner.svg" alt="RegizAI Banner" width="100%" />
 </p>
 
 ---
